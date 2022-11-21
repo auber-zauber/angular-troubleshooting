@@ -1,0 +1,10 @@
+<form [formGroup]="form">
+  <mat-form-field>
+    <mat-label>select a value</mat-label>
+    <mat-select formControlName="todo" [compareWith]="compareTodos">
+      <mat-option *ngFor="let item of this.todosObs | async" [value]="item">
+        {{ item.id }} - {{ item.title }}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+</form>
